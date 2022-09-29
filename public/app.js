@@ -58,4 +58,91 @@ function dropdownFunction(element) {
     }
     list.classList.toggle("hidden");
 }
+// Tab component
+let tabsContainer = document.querySelector("#tabs");
+
+let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
+
+console.log(tabTogglers);
+
+tabTogglers.forEach(function(toggler) {
+  toggler.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    let tabName = this.getAttribute("href");
+
+    let tabContents = document.querySelector("#tab-contents");
+
+    for (let i = 0; i < tabContents.children.length; i++) {
+      
+      tabTogglers[i].parentElement.classList.remove("border-b-2", "border-blue-600", "-mb-px", "bg-white");  tabContents.children[i].classList.remove("hidden");
+      if ("#" + tabContents.children[i].id === tabName) {
+        continue;
+      }
+      tabContents.children[i].classList.add("hidden");
+      
+    }
+    e.target.parentElement.classList.add("border-b-2", "border-blue-600", "-mb-px", "bg-white");
+  });
+});
+
+// menu dropdown
+indow.Components = {
+    customSelect(options) {
+      return {
+        init() {
+          this.$refs.listbox.focus()
+          this.optionCount = this.$refs.listbox.children.length
+          this.$watch('selected', value => {
+            if (!this.open) return
+  
+            if (this.selected === null) {
+              this.activeDescendant = ''
+              return
+            }
+  
+            this.activeDescendant = this.$refs.listbox.children[this.selected - 1].id
+          })
+        },
+        activeDescendant: null,
+        optionCount: null,
+        open: false,
+        selected: null,
+        value: 1,
+        choose(option) {
+          this.value = option
+          this.open = false
+        },
+        onButtonClick() {
+          if (this.open) return
+          this.selected = this.value
+          this.open = true
+          this.$nextTick(() => {
+            this.$refs.listbox.focus()
+            this.$refs.listbox.children[this.selected - 1].scrollIntoView({ block: 'nearest' })
+          })
+        },
+        onOptionSelect() {
+          if (this.selected !== null) {
+            this.value = this.selected
+          }
+          this.open = false
+          this.$refs.button.focus()
+        },
+        onEscape() {
+          this.open = false
+          this.$refs.button.focus()
+        },
+        onArrowUp() {
+          this.selected = this.selected - 1 < 1 ? this.optionCount : this.selected - 1
+          this.$refs.listbox.children[this.selected - 1].scrollIntoView({ block: 'nearest' })
+        },
+        onArrowDown() {
+          this.selected = this.selected + 1 > this.optionCount ? 1 : this.selected + 1
+          this.$refs.listbox.children[this.selected - 1].scrollIntoView({ block: 'nearest' })
+        },
+        ...options,
+      }
+    },
+  }
   
