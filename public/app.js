@@ -58,33 +58,61 @@ function dropdownFunction(element) {
     }
     list.classList.toggle("hidden");
 }
-// Tab component
-let tabsContainer = document.querySelector("#tabs");
+  // Tab component
+  let tabsContainer = document.querySelector("#tabs");
 
-let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
+  let tabTogglers = tabsContainer.querySelectorAll("#tabs a");
 
-console.log(tabTogglers);
+  console.log(tabTogglers);
 
-tabTogglers.forEach(function(toggler) {
-  toggler.addEventListener("click", function(e) {
-    e.preventDefault();
+  tabTogglers.forEach(function(toggler) {
+    toggler.addEventListener("click", function(e) {
+      e.preventDefault();
 
-    let tabName = this.getAttribute("href");
+      let tabName = this.getAttribute("href");
 
-    let tabContents = document.querySelector("#tab-contents");
+      let tabContents = document.querySelector("#tab-contents");
 
-    for (let i = 0; i < tabContents.children.length; i++) {
-      
-      tabTogglers[i].parentElement.classList.remove("border-b-2", "border-blue-600", "-mb-px", "bg-white");  tabContents.children[i].classList.remove("hidden");
-      if ("#" + tabContents.children[i].id === tabName) {
-        continue;
+      for (let i = 0; i < tabContents.children.length; i++) {
+        
+        tabTogglers[i].parentElement.classList.remove("border-b-2", "border-blue-600", "-mb-px", "bg-white");  tabContents.children[i].classList.remove("hidden");
+        if ("#" + tabContents.children[i].id === tabName) {
+          continue;
+        }
+        tabContents.children[i].classList.add("hidden");
+        
       }
-      tabContents.children[i].classList.add("hidden");
-      
-    }
-    e.target.parentElement.classList.add("border-b-2", "border-blue-600", "-mb-px", "bg-white");
+      e.target.parentElement.classList.add("border-b-2", "border-blue-600", "-mb-px", "bg-white");
+    });
   });
-});
+
+  // Var Tab component
+    let var_tabsContainer = document.querySelector("#var_tabs");
+
+    let var_tabTogglers = var_tabsContainer.querySelectorAll("#var_tabs a");
+
+    console.log(var_tabTogglers);
+
+    var_tabTogglers.forEach(function(var_toggler) {
+      var_toggler.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        let var_tabName = this.getAttribute("href");
+
+        let var_tabContents = document.querySelector("#var_tab-contents");
+
+        for (let i = 0; i < var_tabContents.children.length; i++) {
+          
+          var_tabTogglers[i].parentElement.classList.remove("border-b-2", "border-blue-600", "-mb-px", "bg-white"); 
+          var_tabContents.children[i].classList.remove("hidden");
+          if ("#" + var_tabContents.children[i].id === var_tabName) {
+            continue;
+          }
+          var_tabContents.children[i].classList.add("hidden");
+        }
+        e.target.parentElement.classList.add("border-b-2", "border-blue-600", "-mb-px", "bg-white");
+      });
+    });
 
 // menu dropdown
 window.Components = {
