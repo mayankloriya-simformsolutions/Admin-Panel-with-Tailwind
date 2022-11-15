@@ -132,6 +132,12 @@ module.exports = {
             outlineOffset: '0px',
             backgroundColor: 'rgb(209 213 219)',
           }
+        },
+        '[x-cloak].calendar': {
+          display: 'none',
+        },
+        '[x-cloak].daterange-container': {
+          display: 'none',
         }
       })
      }
