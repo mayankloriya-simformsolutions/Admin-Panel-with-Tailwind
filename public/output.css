@@ -980,10 +980,6 @@ select {
   display: none;
 }
 
-[x-cloak].daterange-container {
-  display: none;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1495,10 +1491,6 @@ select {
   width: 4rem;
 }
 
-.w-0 {
-  width: 0px;
-}
-
 .w-96 {
   width: 24rem;
 }
@@ -1509,6 +1501,10 @@ select {
 
 .w-40 {
   width: 10rem;
+}
+
+.w-0 {
+  width: 0px;
 }
 
 .max-w-xs {
@@ -1527,12 +1523,12 @@ select {
   max-width: 48rem;
 }
 
-.max-w-2xl {
-  max-width: 42rem;
-}
-
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
 }
 
 .flex-\[0_0_100\%\] {
@@ -1589,12 +1585,12 @@ select {
   cursor: pointer;
 }
 
-.cursor-default {
-  cursor: default;
-}
-
 .cursor-not-allowed {
   cursor: not-allowed;
+}
+
+.cursor-default {
+  cursor: default;
 }
 
 .select-none {
@@ -2607,12 +2603,12 @@ select {
   opacity: 0.5;
 }
 
-.opacity-100 {
-  opacity: 1;
-}
-
 .opacity-25 {
   opacity: 0.25;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .shadow {
@@ -2895,11 +2891,6 @@ select {
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
-.hover\:text-indigo-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(99 102 241 / var(--tw-text-opacity));
-}
-
 .hover\:text-gray-800:hover {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
@@ -2913,6 +2904,11 @@ select {
 .hover\:text-indigo-700:hover {
   --tw-text-opacity: 1;
   color: rgb(67 56 202 / var(--tw-text-opacity));
+}
+
+.hover\:text-indigo-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(99 102 241 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {

@@ -136,9 +136,6 @@ module.exports = {
         '[x-cloak].calendar': {
           display: 'none',
         },
-        '[x-cloak].daterange-container': {
-          display: 'none',
-        }
       })
      }
     )
