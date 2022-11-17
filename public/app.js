@@ -622,7 +622,6 @@ window.addEventListener('resize', myBarNegativeChart.resize);
 
 
 // calendar
-
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const MONTH_SHORT_NAMES = [
   "Jan",
@@ -1032,7 +1031,6 @@ function appDateRangePicker() {
 }
 
 //modal fade in and fade out
-
   let modal = document.getElementById("modal");
   function modalHandler(val) {
       if (val) {
@@ -1042,30 +1040,13 @@ function appDateRangePicker() {
       }
   }
   
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-     if (event.target == modal) {
-      modal.style.display = "none";
-      fadeOut(modal);
-      }
-  }
-
-
-  // window.onload = function(){
-  //     var popup = document.getElementById('modal');
-  //     var overlay = document.getElementById('backgroundOverlay');
-  //     var openButton = document.getElementById('openOverlay');
-  //     document.onclick = function(e){
-  //         if(e.target.id == 'backgroundOverlay'){
-  //             popup.style.display = 'none';
-  //             overlay.style.display = 'none';
-  //         }
-  //         if(e.target === openButton){
-  //            popup.style.display = 'block';
-  //             overlay.style.display = 'block';
-  //         }
-  //     };
-  // };
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    fadeOut(modal);
+    }
+}
 
   function fadeOut(el) {
       el.style.opacity = 1;
@@ -1088,5 +1069,5 @@ function appDateRangePicker() {
           }
       })();
   }
-
+//////////////////////
 
